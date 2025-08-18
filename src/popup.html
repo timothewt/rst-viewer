@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 0 0 8px 0;
+    }
+    
+    .description {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.4;
+      margin: 0;
+    }
+    
+    .icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      background: #3498db;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+    }
+    
+    .controls {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 15px;
+    }
+    
+    .toggle-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .toggle-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background: #ccc;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch.active {
+      background: #3498db;
+    }
+    
+    .toggle-switch .slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: left 0.3s;
+    }
+    
+    .toggle-switch.active .slider {
+      left: 28px;
+    }
+    
+    .current-page {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+      word-break: break-all;
+    }
+    
+    .status {
+      font-size: 12px;
+      margin-top: 5px;
+      padding: 5px 8px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .status.enabled {
+      background: #d4edda;
+      color: #155724;
+    }
+    
+    .status.disabled {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    
+    .support {
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+    }
+    
+    .kofi-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #ff5e5b;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    
+    .kofi-button:hover {
+      background: #e54b47;
+    }
+    
+    .kofi-button:visited {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="icon">📄</div>
+    <h1 class="title">RST Viewer</h1>
+    <p class="description">
+      Automatically converts reStructuredText (.rst) files into beautifully formatted HTML when viewing them in your browser.
+    </p>
+  </div>
+  
+  <div class="controls">
+    <div class="toggle-section">
+      <span class="toggle-label">Enable on this page</span>
+      <div class="toggle-switch" id="toggleSwitch">
+        <div class="slider"></div>
+      </div>
+    </div>
+    <div class="current-page" id="currentPage">Loading...</div>
+    <div class="status" id="status">Loading...</div>
+  </div>
+  
+  <div class="support">
+    <a href="https://ko-fi.com/timothewt" target="_blank" class="kofi-button">
+      ☕ Support
+    </a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
