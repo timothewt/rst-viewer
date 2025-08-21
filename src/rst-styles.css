@@ -30,7 +30,7 @@ p {
   margin-bottom: 1em;
 }
 
-code, .literal {
+.literal {
   border: 1px solid #ddd;
   background: #f4f4f4;
   padding: 2px 4px;
@@ -44,11 +44,6 @@ pre {
   border-radius: 4px;
   padding: 10px;
   overflow-x: auto;
-}
-
-pre code {
-  background: transparent;
-  padding: 0;
 }
 
 ul, ol {

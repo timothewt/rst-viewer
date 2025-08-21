@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "RST Viewer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chrome extension that automatically renders reStructuredText (.rst) files as beautifully formatted HTML with syntax highlighting.",
   "author": "Timothé Watteau",
   
@@ -14,7 +14,6 @@
     "file:///*",
     "*://*/*.rst"
   ],
-  
   "content_scripts": [{
     "matches": [
       "file:///*.rst", 
@@ -25,7 +24,7 @@
   }],
   
   "web_accessible_resources": [{
-    "resources": ["rst-styles.css"],
+    "resources": ["rst-styles.css", "prism.css", "prism.js"],
     "matches": ["<all_urls>"]
   }],
   

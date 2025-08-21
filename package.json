@@ -1,9 +1,10 @@
 {
   "name": "rst-viewer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chrome extension for viewing reStructuredText files with syntax highlighting",
   "homepage": "https://github.com/timothewt/rst-viewer",
   "scripts": {
+	"format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\" \"!src/prism.js\"",
     "build": "webpack",
     "package": "npm run build && cd dist && zip -r ../rst-viewer-extension.zip *"
   },
@@ -15,13 +16,12 @@
     "documentation"
   ],
   "dependencies": {
-    "rst-compiler": "^0.5.5",
-    "shiki": "^3.9.2"
+    "rst-compiler": "^0.5.5"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
+    "prettier": "^3.6.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   }
 }
-

@@ -15,6 +15,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "manifest.json" },
+        { from: "src/prism.css" },
+        { from: "src/prism.js" },
         { from: "src/rst-styles.css" },
         { from: "src/popup.html" },
         { from: "src/popup.js" },

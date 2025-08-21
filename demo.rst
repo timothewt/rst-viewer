@@ -4,91 +4,157 @@
 
 **Transform raw reStructuredText files into beautiful, readable documents instantly!**
 
-No more squinting at ugly markup - see your documentation come alive with professional formatting.
+✨ **Key Features:** Professional syntax highlighting • Beautiful typography • Math equations • Zero configuration
 
-📄 Complete RST Support
-=======================
+Python Development
+==================
 
-Handles all standard reStructuredText features:
+.. code-block:: python
 
-* **Bold text**, *italic text*, and ``inline code``
-* Headers, paragraphs, and lists
-* Tables, blockquotes, and links
-* Mathematical expressions and equations
-* All 10 admonition types with unique styling
+    import asyncio
+    from dataclasses import dataclass
+    from typing import List, Optional
 
-======================  ================  =========================================
-Feature                 Status            Description
-======================  ================  =========================================
-Standard Formatting     ✅ Perfect         Bold, italic, code, clean tables & lists
-Math Equations          ✅ Perfect         LaTeX support
-Admonitions             ✅ Perfect         10 unique types
-======================  ================  =========================================
+    @dataclass
+    class DocumentProcessor:
+        """Process RST documents with syntax highlighting."""
+        theme: str = "github-dark"
+        languages: List[str] = None
+        
+        async def process(self, content: str) -> dict:
+            """Process RST content asynchronously."""
+            result = await self.compile_rst(content)
+            return {
+                "html": result.body,
+                "success": True,
+                "language_count": len(self.languages or [])
+            }
+
+JavaScript & APIs
+=================
+
+.. code-block:: javascript
+
+    class RstViewer {
+        constructor(options = {}) {
+            this.theme = options.theme || 'github-dark';
+            this.prismConfig = {
+                themes: ['tomorrow-night', 'oceanic-next'],
+                languages: this.getSupportedLanguages()
+            };
+        }
+        
+        async processDocument(content) {
+            const compiler = new RstToHtmlCompiler();
+            const html = await compiler.compile(content);
+            
+            return {
+                success: true,
+                html: html.body,
+                metadata: this.extractMetadata(html.header)
+            };
+        }
+    }
+
+Database Queries
+================
+
+.. code-block:: sql
+
+    -- Document analytics with syntax highlighting
+    SELECT 
+        d.language,
+        COUNT(*) as total_docs,
+        AVG(LENGTH(d.content)) as avg_size,
+        COUNT(cb.id) as code_blocks
+    FROM rst_documents d
+    LEFT JOIN code_blocks cb ON d.id = cb.document_id
+    WHERE d.created_at >= CURRENT_DATE - INTERVAL '30 days'
+    GROUP BY d.language
+    ORDER BY total_docs DESC;
+
+Configuration & DevOps
+======================
+
+.. code-block:: yaml
+
+    # GitHub Actions CI/CD Pipeline
+    name: RST Viewer Build
+    on: [push, pull_request]
+    
+    jobs:
+      test:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - uses: actions/setup-node@v4
+            with:
+              node-version: '18'
+              cache: 'npm'
+          - run: npm ci && npm test
+
+.. code-block:: json
+
+    {
+      "name": "rst-viewer-extension",
+      "version": "2.1.0",
+      "description": "Beautiful RST viewer with syntax highlighting",
+      "permissions": ["activeTab", "storage"],
+      "content_scripts": [{
+        "matches": ["file://*.rst"],
+        "js": ["content.js"],
+        "css": ["rst-styles.css", "prism.css"]
+      }]
+    }
+
+📊 Feature Support
+==================
+
+======================  ================
+Feature                 Status
+======================  ================
+Syntax Highlighting     ✅ **Perfect**
+Math Equations          ✅ **Perfect**
+Tables & Lists          ✅ **Perfect**
+Admonitions             ✅ **Perfect**
+======================  ================
 
 🎯 Smart Admonitions
 ====================
 
-Each admonition gets distinct colors and icons:
-
 .. note::
-   **Information** - Perfect for sharing important details and context that readers should know.
+   **Pro Tip**: Works automatically with any `.rst` file. Zero configuration required!
 
 .. tip::
-   **Pro Tips** - Great for helpful suggestions and best practices that improve workflows.
+   **Performance**: Fast processing with optimized JavaScript compilation.
 
 .. warning::
-   **Warnings** - Highlights potential issues or things users should be careful about.
+   **Compatibility**: Supports all standard RST directives and syntax highlighting.
 
-💻 Code Blocks & Lists
-======================
+🧮 Mathematical Excellence
+==========================
 
-Clean formatting for code examples::
+Einstein's equation: :math:`E = mc^2`
 
-    def process_rst_file(content):
-        """Convert RST content to HTML"""
-        compiler = RstToHtmlCompiler()
-        return compiler.compile(content)
-
-Lists and links work perfectly:
-
-1. **Numbered lists** for ordered content
-2. **Bullet lists** for unordered items  
-3. **Links** like `Python Documentation <https://docs.python.org>`_
-
-    Beautiful blockquotes are also supported for highlighting
-    important passages and citations.
-
-🔬 Mathematical Expressions
-===========================
-
-Beautiful LaTeX math rendering works perfectly:
-
-The famous equation :math:`E = mc^2` demonstrates mass-energy equivalence.
-
-Complex equations render beautifully:
+Complex integrals render beautifully:
 
 .. math::
 
-   \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+    \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
 
 .. math::
 
-   \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+    \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
 
-🚀 Instant Setup
-================
+🚀 Installation
+===============
 
-**Zero configuration required:**
+1. **Install from Chrome Web Store** - One-click setup
+2. **Open any `.rst` file** - Automatic transformation  
+3. **Enjoy beautiful formatting** - No configuration needed!
 
-1. Install from Chrome Web Store
-2. Open any `.rst` file in Chrome
-3. Enjoy beautiful formatting automatically!
+**Perfect for developers, technical writers, and documentation enthusiasts.**
 
-Works with local files, documentation sites, and any unformatted RST documents.
+---
 
-.. seealso::
-   **Perfect for documentation!** View Python docs, Sphinx sites, and technical specifications with beautiful formatting.
-
-------------------
-
-**Ready to upgrade your RST reading experience?** Install now! 🎉
+**Ready to transform your RST experience?** Install today! 🎉
